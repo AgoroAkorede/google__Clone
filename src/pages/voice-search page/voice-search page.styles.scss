@@ -1,0 +1,43 @@
+.voice-search-page{
+    display:flex;
+    align-items: center;
+    height:100vh;
+    justify-content: space-evenly;
+
+    .voice-searh-text{
+        width: 60vw;
+        display: flex;
+       flex-direction: column;
+
+        .title{
+            font-size:2.2rem;
+        }
+        .footer{
+            color: blue;
+            cursor: pointer;
+            // position: absolute;
+            // top:70%;
+            // left:12.5%;
+        }
+    }
+
+   
+    .voice-icon-container{
+        height:7rem;
+        width:7rem;
+        background-color: rgba(240, 240, 240, 0.657);
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border: solid 1px rgb(211, 211, 211) ;
+        .voice-icon{
+            height: 3rem;
+            fill:rgb(214, 214, 214);
+        }
+    }
+}
