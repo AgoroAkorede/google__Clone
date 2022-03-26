@@ -1,0 +1,48 @@
+.search-page_top{
+    display:flex;
+    flex-direction: row;
+    padding: 1rem;
+
+    button{
+        border:none;
+       background-color:transparent ; 
+    }
+    &_header{
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+    
+
+    .search-page-searchbox{
+        margin:0;
+        padding:0;
+    }
+}
+
+.search-page_sections{
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 2px grey ;
+    justify-content: space-evenly;
+    padding:1rem;
+
+
+    li{
+        list-style: none;
+        margin-left: 6rem;
+        // color:grey;
+        cursor:pointer;
+        margin-bottom:1.5rem;
+
+        .icons{
+            height:1rem;
+            margin-left: 6px;
+            fill:grey;
+        }
+    }
+    .search-page_content{
+        margin-left:6rem;
+        margin-right: 8rem;
+        padding:2rem;
+    }
+}
