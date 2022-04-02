@@ -17,7 +17,7 @@ const SearchBox = ({ placeholder, handleChange }) => {
 
         console.log('You are hitting the search button');
         
-        navigate('/search')
+        navigate(`/search`)
 
         dispatch({
             type: actionTypes.SET_SEARCH_TERM,
@@ -44,7 +44,7 @@ const SearchBox = ({ placeholder, handleChange }) => {
                     // Render Recent Searches
                 )
             }
-            <VoiceIcon className='voice-icon' onClick={navigate} />
+            <VoiceIcon className='voice-icon' onClick={()=> navigate('/voice-search')} />
         </form>
     )
 }

@@ -13,11 +13,9 @@
             font-size:2.2rem;
         }
         .footer{
-            color: blue;
-            cursor: pointer;
-            // position: absolute;
-            // top:70%;
-            // left:12.5%;
+              color: blue;
+              cursor: pointer;
+              
         }
     }
 
@@ -35,6 +33,23 @@
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
         border: solid 1px rgb(211, 211, 211) ;
+        animation:blinking 3s  steps(2,start) infinite;
+        -webkit-animation:blinking 3s  steps(2,start) infinite;
+        
+        @keyframes blinking{
+            0%{
+                box-shadow:10px 0px 5px hsl(0, 0%, 90%);
+            }
+                  50%{
+                    // opacity: 0.2;
+                    box-shadow:5px 5px 8px hsl(0, 0%, 95%);
+                  }
+               100%{
+                    // opacity: 0.5;
+                    box-shadow:10px 6px 10px hsl(0, 0%, 90%);
+                }
+            }
+       
         .voice-icon{
             height: 3rem;
             fill:rgb(214, 214, 214);

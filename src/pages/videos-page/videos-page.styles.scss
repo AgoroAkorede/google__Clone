@@ -1,0 +1,35 @@
+.play-icon{
+    height:2rem;
+    fill:rgba(5, 5, 5, 0.671);
+
+}
+.videos-page{
+    margin-left:15rem;
+    margin-right: 30rem;
+    margin-top: 2rem;
+
+    .video{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 1rem;
+
+        .video-item{
+            display: flex;
+            .image-item{
+                border-radius: 12px;
+                -webkit-border-radius: 12px;
+                -moz-border-radius: 12px;
+                -ms-border-radius: 12px;
+                -o-border-radius: 12px;
+}
+            .play-icon{
+                transform: translate(50%,-150%);
+                -webkit-transform: translate(50%,-150%);
+                -moz-transform: translate(50%,-150%);
+                -ms-transform: translate(50%,-150%);
+                -o-transform: translate(50%,-150%);
+}
+        }
+    }
+}

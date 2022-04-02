@@ -1,44 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react';
 import SearchBox from '../../component/search-box/search-box.component';
 import {useNavigate} from 'react-router-dom'
 import { useResultContext } from '../../ResultProvider/ResultProvider' 
 
-import GoogleSearch from '../../component/google-search/google-search.component';
+import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu'
+import Header from '../../component/header/header.component'
+import './image-page.scss'
 
-import { ReactComponent as NewsIcon } from '../../assets/news-icon/news-icon.svg';
+import SerpSearch from '../../component/serpApi'
+import { Loading } from '../../Loading';
 
-import { ReactComponent as ImagesIcon } from '../../assets/images-icon/images-icon.svg';
-
-import { ReactComponent as ShoppingIcon } from '../../assets/shopping-icon/shopping-icon.svg';
-
-import { ReactComponent as MoreIcon } from '../../assets/more-icon/more-icon.svg';
-
-import { ReactComponent as SearchIcon } from '../../assets/search-icon/search-icon.svg';
 
 const ImagesPage = () => {
     const navigate=useNavigate()
     const [ { term }, dispatch ] = useResultContext();
-    const { results } = GoogleSearch(term)
+    const { results,isLoading } = SerpSearch(term);
+
+
+    const truncate = (word) => {
+        return `${word.trim().slice(0,30)} ...`
+    }
+    navigator.geolocation.getCurrentPosition((position) => {
+        console.log(position.coords.latitude)
+    });
+    if (isLoading) return <Loading />
 
     return (
         <div>
-            <div className='search-page_top'>
-            <button onClick={ () => {
-        navigate('/')
-    } }>
-                <h1 className='search-page_top_header'>
-                     Google
-                </h1>
-             </button>
-                <SearchBox className='search-page-searchbox' value={ term } />
-            </div>
-            <ul className='search-page_sections'>
-                    <li>All <SearchIcon className='icons' /></li>
-                    <li>News <NewsIcon className='icons' /></li>
-                    <li>Images <ImagesIcon className='icons' /></li>
-                    <li>Shopping<ShoppingIcon className='icons' /> </li>
-                    <li>More <MoreIcon className='icons' /></li>
-            </ul>
+            <Header />
+
+            {/* <div className='suggested-searches'>
+                {
+                    results?.suggested_searches.map(item => (
+                        <a href={item.link} className='card'>
+                            <img className='image' src={item.thumbnail} />
+                            <p className='card-name'>{ item.name }</p>
+                        </a>
+                    ))
+                    }
+            </div> */}
+           <div className='images-page'>
+                { results?.images_results.map(item => (
+                    <div key={item.position}>
+                        <div className='image'>
+                            <img className='image-item' key={ item.position } src={ item.thumbnail} />
+                        </div>
+                        <p className='image-title'> { truncate(item.title)}</p>
+                        <a className='image_link' href={ item.link }>{item.source }</a>
+                    </div>
+                ))}
+            </div> 
         </div>
     )
 }

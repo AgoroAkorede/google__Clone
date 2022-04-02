@@ -1,0 +1,94 @@
+.suggested-searches{
+    display:grid;
+    grid-auto-flow:column;
+    grid-gap:.6rem;
+    width: 90vw;
+    overflow-x:scroll;
+    overflow-y: hidden;
+    overscroll-behavior:contain;
+    margin:2rem;
+    padding: 20px;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    .card{
+        display:block;
+        height: 3.5rem;
+        width:auto;
+        box-shadow: (0, 0%, 87%) 5px 5px 5px 5px;
+        border:solid 1px rgb(211, 211, 211);
+        border-radius:10px;
+        -webkit-border-radius:10px;
+        -moz-border-radius:10px;
+        -ms-border-radius:10px;
+        -o-border-radius:10px;
+        display:flex;
+        flex-direction: row;
+        cursor:pointer;
+        text-decoration: none;
+                
+        .image{
+            border-top-left-radius:10px;
+            border-bottom-left-radius:10px;   
+}
+
+
+        .card-name{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: .3rem;
+            font-weight: bold;
+            color:rgb(77, 77, 77);
+            text-decoration: none;
+            padding: .5rem;
+        }
+}
+}
+.images-page{
+    margin:3rem;
+    display:flex;
+    flex-wrap:wrap;
+    width:95vw;
+    overflow:hidden;
+    grid-gap:1.5rem;
+    grid-template-columns:repeat(12,2fr);
+    grid-template-rows:repeat(2,4vw);
+    overflow-x: hidden;
+
+
+    .image-title{
+        width:12rem;
+        font-size: .8em;
+    }
+    .image_link{
+        color:grey;
+        font-size:12px;
+        text-decoration:none;
+
+        &:hover{
+            text-decoration:underline;
+            width:20rem;
+        }
+    }
+
+    .image{
+        object-fit:contain;
+        display:block;
+        // max-width:22rem;
+        &:hover{
+            box-shadow: (0, 0%, 87%) 5px 5px 5px 5px;
+            cursor:pointer;
+        }
+
+        .image-item{
+            height: 12rem;
+            &:hover{
+                box-shadow: (0, 0%, 87%) 5px 5px 5px 5px;
+            }
+        }
+    }
+    
+}

@@ -6,7 +6,9 @@ import { Routes, Route } from 'react-router-dom'
 import Homepage from './pages/homepage/homepage.component'
 import SearchPage from './pages/searchpage/searchpage.pages' 
 import ImagesPage from './pages/image-page/image-page'
-import NewsPage from './pages/news-page/news-page'
+import VideosPage from './pages/videos-page/videos-page'
+import NewsPage from './pages/news-page/news-page';
+import ShopsPage from './pages/shop-page/shop-page';
 
 import VoiceSearchPage from './pages/voice-search page/voice-search page.component'
 
@@ -15,10 +17,12 @@ const App=()=> {
         <div>
             <Routes>
               <Route path='/' element={ <Homepage /> } />
-        <Route path='/search' element={ <SearchPage /> } />
-        <Route path='/images' element={ <ImagesPage /> } />
-        <Route path='/news' element={ <NewsPage /> } />
-        <Route path='/voice-search' element={ <VoiceSearchPage /> }/>
+              <Route path='/search' element={ <SearchPage /> } />
+              <Route path='/images' element={ <ImagesPage /> } />
+              <Route path='/videos' element={ <VideosPage /> } />
+              <Route path='/news' element={ <NewsPage /> } />
+              <Route path='/shops' element={ <ShopsPage /> } />
+              <Route path='/voice-search' element={ <VoiceSearchPage /> }/>
             </Routes>
           {/* <SearchPage /> */}
         </div>
