@@ -25,7 +25,7 @@ const SearchBox = ({ placeholder, handleChange }) => {
         })
     }
     return (
-        <form className='search-box'>
+        <form className='search-box' onSubmit={search}>
             <SearchIcon type='submit' onClick={search}  className='search-icon' />
             <input
                 placeholder={ placeholder }

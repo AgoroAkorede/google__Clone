@@ -20,26 +20,28 @@ const ImagesPage = () => {
     const truncate = (word) => {
         return `${word.trim().slice(0,30)} ...`
     }
-    navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position.coords.latitude)
-    });
+    
     if (isLoading) return <Loading />
+
+    console.log(results)
 
     return (
         <div>
             <Header />
 
+            {/* This is for the suggested-searches images  but it is temporarily unavailable */ }
+            
             {/* <div className='suggested-searches'>
-                {
-                    results?.suggested_searches.map(item => (
-                        <a href={item.link} className='card'>
+                {results?.suggested_searches.map(item => (
+                        <a href={item.serpapi_link} className='card'>
                             <img className='image' src={item.thumbnail} />
                             <p className='card-name'>{ item.name }</p>
                         </a>
                     ))
                     }
             </div> */}
-           <div className='images-page'>
+           
+            <div className='images-page'>
                 { results?.images_results.map(item => (
                     <div key={item.position}>
                         <div className='image'>

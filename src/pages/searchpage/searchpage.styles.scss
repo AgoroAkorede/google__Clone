@@ -1,3 +1,7 @@
+$tablet-width:768px;
+$desktop-width:1024px;
+$phone-width:400px;
+
 .search-page-top_section{
     margin-bottom:1.5rem;
 }
@@ -31,8 +35,17 @@
     justify-content: space-evenly;
     padding:.75rem;
     margin-bottom:.25rem;
-    margin-left: 16rem;
+    margin-left: 10rem;
     width:29rem;
+    @media (max-width:#{$phone-width}){
+        margin-left:1rem;
+        padding:.3em;
+    }
+    @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+        margin-left:3rem;
+        margin-right: 7rem;
+        padding:.5rem;
+}
 
 
     li{
@@ -48,6 +61,17 @@
     margin-left:15rem;
     margin-right: 30rem;
     padding:1.2rem;
+    @media (max-width:#{$phone-width}){
+        margin-left:1rem;
+        margin-right: 3rem;
+        padding:.3em;
+    }
+
+    @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+        margin-left:3rem;
+        margin-right: 5rem;
+        padding:.5rem;
+}
     
    
 
@@ -63,6 +87,12 @@
         font-size: 14px;
         color: rgb(37, 37, 37);
         margin-top: 10px;
+        @media (max-width:#{$phone-width}){
+            font-size:.7rem;
+        }
+        @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+         font-size:.8rem;
+    }
 
         .search-page_imagesContent{
             object-fit: contain;
@@ -73,12 +103,21 @@
             -moz-border-radius: 4px;
             -ms-border-radius: 4px;
             -o-border-radius: 4px;
+            @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+                height:2rem;
+        }
 }
     }
 }
 .search-information{
     margin-left: 15rem;
     color: grey;
+    @media (max-width:#{$phone-width}){
+        margin-left:1.5rem;
+    }
+    @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+     margin-left:3rem;
+}
 }
 .icons{
     height:1rem;
@@ -91,6 +130,12 @@
     .header{
         font-weight: 500;
         font-size: 1.5rem;
+        @media (max-width:#{$phone-width}){
+            font-size:1.1rem;
+        }
+                @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+                    font-size:1.25rem;
+            }
     }
 
     &:hover{
@@ -101,4 +146,10 @@
     color: grey;
     list-style: none;
     text-decoration: none;
+    @media (max-width:#{$phone-width}){
+        font-size:.5rem;
+    }
+    @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+        font-size:.75rem;
+}
 }

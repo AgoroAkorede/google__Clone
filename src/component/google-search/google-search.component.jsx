@@ -20,6 +20,7 @@ const GoogleSearch = (term) => {
                     
                     setIsLoading(false)
                 })
+            
         }
         fetchData()
     }, [ term ])

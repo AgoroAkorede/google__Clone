@@ -31,20 +31,18 @@ const Header = () => {
             <div className='search-page-top_section'>
 
                 <div className='search-page_top'>
-                <button>
-                    <h1 className='search-page_top_header'>
-                        Google
-                    </h1>
+                <button className='search-page_top_header'>
+
                 </button>
-                    <SearchBox className='search-page-searchbox' value={ term } />
+                    <SearchBox className='search-page-searchbox' value={ term } placeholder={term} />
                 </div>
                 <ul className='search-page_sections'>
                         <button onClick={()=>{navigate('/search')}}> All <SearchIcon className='icons' /></button>
                         <button onClick={()=>{navigate('/news')}}> News <NewsIcon className='icons' /></button>
                         <button onClick={()=>{navigate('/images')}}> Images <ImagesIcon className='icons' /></button>
-                    <button onClick={ () => { navigate('/shops') } }> Shopping<ShoppingIcon className='icons' /> </button>
+                    {/* <button onClick={ () => { navigate('/shops') } }> Shopping<ShoppingIcon className='icons' /> </button> */}
                     <button onClick={()=>{navigate('/videos')}}> Video<VideoIcon className='icons' /> </button>
-                        <li>More <MoreIcon className='icons' /></li>
+                        <button>More <MoreIcon className='icons' /></button>
                     </ul>
             </div>
         </div>

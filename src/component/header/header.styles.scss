@@ -1,7 +1,8 @@
+$tablet-width:768px;
+$desktop-width:1024px;
+$phone-width:400px;
+
 .search-page-top_section{
-    // position: sticky;  
-    // top: 0;
-    // z-index: 100; 
     margin-bottom:1.5rem;
 }
 .search-page_top{
@@ -9,17 +10,23 @@
     flex-direction: row;
     padding: .3rem;
     align-items:flex-start ;
-    
 
-    button{
-        border:none;
+    &_header{
+        // border-bottom:3px solid blue;
        background-color:transparent ; 
+
+  
+       @media (max-width:#{$phone-width}){
+           font-size:.5rem;
+       }
+       @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+           font-size:1.5rem;
+   }
     }
     &_header{
         font-size: 2.5rem;
         cursor: pointer;
-    }
-    
+    }  
 
     .search-page-searchbox{
         margin:0;
@@ -27,19 +34,25 @@
     }
 }
 
-.search-page_sections{
+ul{
     display: flex;
     flex-direction: row;
-    border-bottom: solid 1px grey ;
-    justify-content: space-evenly;
+    // border-bottom: solid 1px rgb(212, 212, 212) ;
     padding:.75rem;
     margin-bottom:.25rem;
-    margin-left: 16rem;
-    width:29rem;
+    width:100vw;
 
+  @media (max-width:#{$phone-width}){
+        margin-left:.2rem;
+        padding:.3em;
+    }
 
+    @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+        margin-left:1rem;
+        width: 15%;
+        padding:.5em;
+}
     button{
-        
         cursor:pointer;
         font-size:.95rem;
         background-color: transparent;
@@ -47,6 +60,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media (max-width:#{$phone-width}){
+           font-size: 0.65rem;
+        }
+        @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+            font-size:.8rem;
+    }
 
     }
     
@@ -96,5 +116,13 @@
 .icons{
     height:1rem;
     margin-left: 6px;
-    fill:grey;
+    fill:rgb(212, 212, 212);
+    @media (max-width:#{$phone-width}){
+        height: 0.35rem;
+     }
+    
+
+    @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+        height:.5rem;
+ }
 }

@@ -7,7 +7,7 @@ const ErrorPage = () => {
             <div className='text'>
                 <h1 className='header'>Google</h1>
                 <p className='content_1'> <span>404.</span> that's an error</p>
-                <p className='content_2'>The requested Url was not found </p>
+                <p>The requested Url was not found </p>
                 <p className='content_2'>That's all we know</p>
             </div>
             

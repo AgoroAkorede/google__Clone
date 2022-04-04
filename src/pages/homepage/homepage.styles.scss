@@ -4,12 +4,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    transition:1s linear ease-in-out ;
+   
+    -webkit-transition:1s linear ease-in-out ;
+    -moz-transition:1s linear ease-in-out ;
+    -ms-transition:1s linear ease-in-out ;
+    -o-transition:1s linear ease-in-out ;
+    $tablet-width:768px;
+    $desktop-width:1024px;
+    $phone-width:480px;
+
     .homepage-header{
         font-size: 5.5rem;
         font-weight: 600 ;
         color:rgb(30, 96, 219);
         margin-bottom: 1rem;
+
+        @media (max-width:#{$tablet-width})  {
+                padding: 3rem;
+                font-size: 3rem; 
+        }
     }
     .homepage-buttons{
         display: flex;
@@ -22,9 +36,16 @@
             text-decoration: none;
             list-style: none;
             background-color: rgba(184, 184, 184, 0.123);
-            padding: .75em;
+            padding: 1em;
             font-size: .75em;
             border: none;
+
+            @media (max-width:#{$phone-width})  {
+                font-size: .5em;
+                padding: .5em 1em;
+                margin-left: 10px;
+                
+        }
 
             &:hover{
                 background-color: rgba(88, 87, 87, 0.123);

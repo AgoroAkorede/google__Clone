@@ -1,3 +1,7 @@
+$tablet-width:768px;
+$desktop-width:1024px;
+$phone-width:400px;
+
 .suggested-searches{
     display:grid;
     grid-auto-flow:column;
@@ -54,14 +58,32 @@
     width:95vw;
     overflow:hidden;
     grid-gap:1.5rem;
-    grid-template-columns:repeat(12,2fr);
+    grid-template-columns:repeat(2,2fr);
     grid-template-rows:repeat(2,4vw);
     overflow-x: hidden;
+    overflow: hidden;
+
+    @media (max-width:#{$phone-width}){
+      margin: .3rem;
+      grid-template-columns:repeat(2,2fr);
+      grid-template-rows:repeat(2,2vw);
+    }
+    @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+      margin: 1rem;
+}
 
 
     .image-title{
         width:12rem;
         font-size: .8em;
+
+
+        @media (max-width:#{$phone-width}){
+           width: 24vw;
+          }
+          @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+            width: 20vw;
+      }
     }
     .image_link{
         color:grey;
@@ -85,6 +107,15 @@
 
         .image-item{
             height: 12rem;
+
+            @media (max-width:#{$phone-width}){
+                max-width:32.5vw ;
+                height: 20vh;
+              }
+              @media (min-width:#{$phone-width}) and (max-width:#{$tablet-width})  {
+                max-height: 30vh;
+                max-width:40vw ;
+          }
             &:hover{
                 box-shadow: (0, 0%, 87%) 5px 5px 5px 5px;
             }
