@@ -5,7 +5,7 @@ import { ReactComponent as VoiceIcon } from '../../assets/voice-search-icon/voic
 import {useNavigate} from 'react-router-dom'
 
 import { useResultContext } from '../../ResultProvider/ResultProvider'
-import {actionTypes} from '../../ResultProvider/reducer'
+import { actionTypes } from '../../ResultProvider/reducer'
 
 const SearchBox = ({ placeholder, handleChange }) => {
     const [ input, setInput ] = useState("")
@@ -23,7 +23,10 @@ const SearchBox = ({ placeholder, handleChange }) => {
             type: actionTypes.SET_SEARCH_TERM,
             term:input
         })
+        
     }
+    
+    
     return (
         <form className='search-box' onSubmit={search}>
             <SearchIcon type='submit' onClick={search}  className='search-icon' />

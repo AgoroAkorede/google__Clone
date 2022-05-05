@@ -26,14 +26,14 @@ const VideosPage = () => {
            <div className='videos-page'>
                 { results?.video_results.map(item => (
                     <div key={item.position}>
-                            <p>{ item.displayed_link }</p>
+                            <p className="link">{ item.displayed_link }</p>
                         <div className='video'>
                             <div className='video-item'>
                                 <img className='image-item' key={ item.position } src={ item.thumbnail } />
                                 <PlayIcon className='play-icon' />
-                            <div>{ item.duration }</div>
+                            <div className='duration'>{ item.duration }</div>
                         </div>
-                            <p>{item.title}</p>
+                            <p className='title'> <a href={ item.link } > {item.title}</a></p>
                             <p>{ item.snippet }</p>
                         </div>
                     </div>

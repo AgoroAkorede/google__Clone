@@ -7,15 +7,38 @@
     margin-left:15rem;
     margin-right: 30rem;
     margin-top: 2rem;
+    .link{
+        position: absolute;
+        top: -80%;
+        color: rgb(73, 73, 73);
+        font-size: 1.25rem;
+        margin:1rem;
+        left: -10%;
+    }
 
     .video{
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin: 1rem;
+        margin: 4.5rem;
+        position: relative;
+        .title{
+            position: absolute;
+            top: -50%;
+            color: rgb(68, 0, 255);
+            font-size: 1.25rem;
+            margin-bottom:1.25rem;
+            cursor: pointer;
+            // left: -10%;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
 
         .video-item{
             display: flex;
+            position:relative;
+            cursor: pointer;
             .image-item{
                 border-radius: 12px;
                 -webkit-border-radius: 12px;
@@ -29,7 +52,28 @@
                 -moz-transform: translate(50%,-150%);
                 -ms-transform: translate(50%,-150%);
                 -o-transform: translate(50%,-150%);
+                position: absolute;
+                top:80%;
+                right: 50%;
+                fill: rgba(255, 255, 255, 0.849);
 }
+            .duration{
+                position: absolute;
+                font-size: .75rem;
+                top:75%;
+                left: 5%;
+                color: white;
+                background-color: rgba(5, 5, 5, 0.671);
+                border-radius: 4px;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                -ms-border-radius: 4px;
+                -o-border-radius: 4px;
+}
+          
         }
     }
+}
+a{
+    text-decoration: none;
 }

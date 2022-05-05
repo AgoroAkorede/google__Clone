@@ -9,7 +9,6 @@ export const actionTypes = {
 };
 
 const reducer = (state, action) => {
-    console.log(action);
 
     switch (action.type) {
         case actionTypes.SET_SEARCH_TERM:

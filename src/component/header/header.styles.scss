@@ -41,6 +41,7 @@ ul{
     padding:.75rem;
     margin-bottom:.25rem;
     width:100vw;
+    overflow: hidden;
 
   @media (max-width:#{$phone-width}){
         margin-left:.2rem;

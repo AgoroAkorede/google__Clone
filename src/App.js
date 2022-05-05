@@ -22,8 +22,9 @@ const App=()=> {
               <Route path='/images' element={ <ImagesPage /> } />
               <Route path='/videos' element={ <VideosPage /> } />
               <Route path='/news' element={ <NewsPage /> } />
-        <Route path='/shops' element={ <ShopsPage /> } />
-        <Route path="*" element={ <ErrorPage /> } />
+              <Route path='/shops' element={ <ShopsPage /> } />
+              <Route path="*" element={ <ErrorPage /> } />
+              <Route path="/404" element={ <ErrorPage /> } />
               <Route path='/voice-search' element={ <VoiceSearchPage /> }/>
             </Routes>
           {/* <SearchPage /> */}

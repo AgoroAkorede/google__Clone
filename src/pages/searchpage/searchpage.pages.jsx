@@ -10,12 +10,51 @@ import { Loading } from '../../Loading';
 
 import './searchpage.styles.scss'
 
+import RecentSearches from 'recent-searches'
+
 const SearchPage = () => {
     const [ { term }, dispatch ] = useResultContext();
     const { results, isLoading } = GoogleSearch(term)
     // save recent searches
-    const saveSearch = [];
-    saveSearch.push(results)
+  
+    // let history = ''
+    let history
+    const historyArr = [];
+        history += term
+        historyArr.push(history)
+        // console.log(historyArr)
+ 
+        
+const searches = new RecentSearches({
+    ttl: 30, // Optional: ttl of searches in milliseconds, default to 24h (1000 * 60 * 60 * 24)
+    limit: 30, // Optional: max number of entries that will be persisted, default is 50
+    namespace:" recent searches", // Optional: custom localStorage namespace
+    ranking: null // Optional: ranking strategy of recent searches, "PROXIMITY" | "TIME" | "PROXIMITY_AND_TIME", default is "PROXIMITY_AND_TIME"
+})
+    
+    // Retrieve searches for a given query
+const previousSearches = searches.getRecentSearches("recent search")
+/* 
+  [ 
+    {query: "John", data: {...}, timestamp: ...},
+    {query: "Marc John", data: {...}, timestamp: ...}
+  ] 
+*/
+
+// To set a recent search
+    let recent = searches.setRecentSearch("recent search", historyArr)
+
+    // let allTheSearchesArr = searches.setRecentSearch("recent searches", recentArr)
+    // const allTheSearches=allTheSearchesArr[0]
+    
+    let recentArr = []
+    recentArr.push(previousSearches[0])
+    console.log(recentArr)
+    
+//     console.log(previousSearches)
+    // const saveSearch = [];
+    // saveSearch.push(results)
+
 
     const navigate = useNavigate();
     if (isLoading) return <Loading />
@@ -24,9 +63,9 @@ const SearchPage = () => {
         <div>
             <Header />
 
-            { term && (
+            {/* { term && (
                 <p className="search-information">About {results?.queries.nextPage[ 0 ].totalResults } results in ({results?.searchInformation.formattedSearchTime })seconds for { term } </p>
-            ) }
+            ) } */}
             
             {
                 results?.items.map(item => (

@@ -1,12 +1,14 @@
 import { useEffect,useState } from "react";
 import { useLocation } from 'react-router-dom'
 import { Loading } from '../Loading';
+import {useNavigate} from 'react-router-dom'
 
 const SerpSearch = (term) => {
   
   const [ results, setResults ] = useState(null);
   const location = useLocation()
   const [ isLoading, setIsLoading ] = useState(true)
+  const navigate=useNavigate()
   let API
 
   useEffect(() => {
@@ -41,7 +43,7 @@ const SerpSearch = (term) => {
         setResults(result)
         setIsLoading(false)
       })
-    .catch(err => console.log(err))
+      .catch(() => { navigate("/404") });
 }
 
     fetcher()
